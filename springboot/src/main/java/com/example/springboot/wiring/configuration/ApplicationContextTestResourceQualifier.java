@@ -8,13 +8,11 @@ public class ApplicationContextTestResourceQualifier {
 
     @Bean(name = "defaultFile")
     public File defaultFile() {
-        File defaultFile = new File("defaultFile.txt");
-        return defaultFile;
+        return new File("defaultFile.txt");
     }
 
     @Bean(name="namedFile")
     public File namedFile() {
-        File namedFile = new File("namedFile.txt");
-        return namedFile;
+        return new File("namedFile.txt");
     }
 }

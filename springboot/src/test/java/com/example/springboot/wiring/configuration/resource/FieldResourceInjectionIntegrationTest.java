@@ -1,7 +1,6 @@
 package com.example.springboot.wiring.configuration.resource;
 
-
-import com.example.springboot.wiring.configuration.ApplicationContextTestResourceNameType;
+import com.example.springboot.wiring.configuration.ApplicationContextTestResourceQualifier;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,8 +14,8 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
-        loader= AnnotationConfigContextLoader.class,
-        classes= ApplicationContextTestResourceNameType.class)
+        loader = AnnotationConfigContextLoader.class,
+        classes = ApplicationContextTestResourceQualifier.class)
 public class FieldResourceInjectionIntegrationTest {
     @Resource(name = "namedFile")
     private File defaultFile;
