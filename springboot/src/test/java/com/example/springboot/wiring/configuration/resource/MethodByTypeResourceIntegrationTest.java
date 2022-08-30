@@ -15,18 +15,18 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
-        loader= AnnotationConfigContextLoader.class,
-        classes= ApplicationContextTestResourceNameType.class)
-public class MethodResourceInjectionIntegrationTest {
+        loader = AnnotationConfigContextLoader.class,
+        classes = ApplicationContextTestResourceNameType.class)
+public class MethodByTypeResourceIntegrationTest {
     private File defaultFile;
 
-    @Resource(name = "namedFile")
+    @Resource
     protected void setDefaultFile(File defaultFile) {
         this.defaultFile = defaultFile;
     }
 
     @Test
-    public void givenResourceAnnotation_WhenSetter_ThenDependencyValid() {
+    public void givenResourceAnnotation_WhenSetter_ThenValidDependency() {
         assertNotNull(defaultFile);
         assertEquals("namedFile.txt", defaultFile.getName());
     }
